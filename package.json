@@ -8,7 +8,9 @@
    "main":"./index.js",
    "keywords":["google","chromecast","upnp","tv"],
    "dependencies":{
-      
+      "node-ssdp":"*",
+      "xmlson":"*",
+      "request":"*"
    },
    "devDependencies":{
       "mocha":"*",

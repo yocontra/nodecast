@@ -18,12 +18,18 @@
 </tr>
 </table>
 
+This library has been tested with a ChromeCast emulator until mine arrives. Theoretically it should work with your physical one just fine.
+
 ## Usage
 
 ```javascript
 var nodecast = require('nodecast');
 
-//TODO: finish this library
+var devices = nodecast.find();
+
+devices.on('device', function(device) {
+	// device contains the device config and the ip address
+});
 ```
 
 ## Examples
