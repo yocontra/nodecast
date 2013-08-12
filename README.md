@@ -5,7 +5,7 @@
 ## Information
 
 <table>
-<tr> 
+<tr>
 <td>Package</td><td>nodecast</td>
 </tr>
 <tr>
@@ -19,6 +19,10 @@
 </table>
 
 This library has been tested with a ChromeCast emulator until mine arrives. Theoretically it should work with your physical one just fine.
+
+## How this works
+
+![Chromecast SSDP](http://geeknizer.com/wp-content/uploads/2013/07/dial-discovery.jpg)
 
 ## Usage
 
