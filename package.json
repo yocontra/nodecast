@@ -9,8 +9,8 @@
    "keywords":["google","chromecast","upnp","tv"],
    "dependencies":{
       "node-ssdp":"*",
-      "xmlson":"*",
-      "request":"*"
+      "request":"*",
+      "ws":"*"
    },
    "devDependencies":{
       "mocha":"*",

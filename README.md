@@ -1,4 +1,4 @@
-![NPM version](https://badge.fury.io/js/nodecast.png)](http://badge.fury.io/js/nodecast)
+[![NPM version](https://badge.fury.io/js/nodecast.png)](http://badge.fury.io/js/nodecast)
 
 ## Information
 
@@ -30,8 +30,24 @@ var nodecast = require('nodecast');
 var devices = nodecast.find();
 
 devices.on('device', function(device) {
-	// device is the virtual representation of your chromecast
+	device.timezones(function(err, timezones) {
+		// returns supported timezones
+	});
 
+	device.reboot(function(err) {
+		// triggers a device reboot
+	});
+
+	device.kill('YouTube', function(err){
+		// kills a currently running app
+		// this has different behaviour depending on the app
+		// killing YT will stop a video
+	});
+
+	device.send('YouTube', 'v=ygI-2F8ApUM', function(err) {
+		// You can send messages to apps
+		// still discovering all possible messages before adding sugar
+	});
 });
 ```
 

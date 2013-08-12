@@ -9,7 +9,6 @@ describe('find()', function() {
     ee.on('device', function(device){
 			should.exist(device);
 			should.exist(device.address);
-			should.exist(device.config);
 			done();
     });
   });
