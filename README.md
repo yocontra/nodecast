@@ -31,7 +31,7 @@ var nodecast = require('nodecast');
 
 var devices = nodecast.find();
 
-devices.on('device', function(device) {
+devices.once('device', function(device) {
 	device.reboot(function(err) {
 		// triggers a device reboot
 	});

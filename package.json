@@ -10,7 +10,8 @@
    "dependencies":{
       "node-ssdp":"*",
       "request":"*",
-      "ws":"*"
+      "ws":"*",
+      "xmlson":"*"
    },
    "devDependencies":{
       "mocha":"*",
