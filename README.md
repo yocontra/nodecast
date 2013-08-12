@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/wearefractal/nodecast.png?branch=master)](https://travis-ci.org/wearefractal/nodecast)
-
-[![NPM version](https://badge.fury.io/js/nodecast.png)](http://badge.fury.io/js/nodecast)
+![NPM version](https://badge.fury.io/js/nodecast.png)](http://badge.fury.io/js/nodecast)
 
 ## Information
 
@@ -32,13 +30,18 @@ var nodecast = require('nodecast');
 var devices = nodecast.find();
 
 devices.on('device', function(device) {
-	// device contains the device config and the ip address
+	// device is the virtual representation of your chromecast
+
 });
 ```
 
 ## Examples
 
 You can view more examples in the [example folder.](https://github.com/wearefractal/nodecast/tree/master/examples)
+
+## Testing
+
+To run the tests you either need a chromecast somewhere on your WiFi or you need to run the emulator.
 
 ## LICENSE
 
