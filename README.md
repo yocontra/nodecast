@@ -22,6 +22,8 @@ This library has been tested with a ChromeCast emulator until mine arrives. Theo
 
 ![Chromecast SSDP](http://geeknizer.com/wp-content/uploads/2013/07/dial-discovery.jpg)
 
+ChromeCast uses DIAL, RAMP, and some REST protocols. This library aims to mash all of those together into one interface.
+
 ## Usage
 
 ```javascript
@@ -30,24 +32,39 @@ var nodecast = require('nodecast');
 var devices = nodecast.find();
 
 devices.on('device', function(device) {
-	device.timezones(function(err, timezones) {
-		// returns supported timezones
-	});
-
 	device.reboot(function(err) {
 		// triggers a device reboot
 	});
 
-	device.kill('YouTube', function(err){
-		// kills a currently running app
-		// this has different behaviour depending on the app
-		// killing YT will stop a video
+	device.volume(0.5, function(err) {
+		// change volume
 	});
 
-	device.send('YouTube', 'v=ygI-2F8ApUM', function(err) {
-		// You can send messages to apps
-		// still discovering all possible messages before adding sugar
+	device.mute(function(err) {
+		// mute the thing
 	});
+
+	device.video.launch("http://site.com/video.mp4", function(err) {
+		// play a video
+	});
+
+	device.video.on('progress', function(status) {
+		// monitor play progress for a video
+	});
+
+	// these control videos currently playing
+	device.video.play(function (err){});
+	device.video.setPosition(function (err){});
+	device.video.pause(function (err){});
+
+	// you can use your own custom apps too
+	device.write("com.you.android.yourapp", {"test": "your custom data here"});
+
+	// and you can listen for events from your apps
+	device.on("command:com.you.android.yourapp", function(msg) {
+
+	});
+
 });
 ```
 
