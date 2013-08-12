@@ -1,0 +1,29 @@
+{
+   "name":"nodecast",
+   "description":"Node interface to chromecast",
+   "version":"0.0.1",
+   "homepage":"http://github.com/wearefractal/nodecast",
+   "repository":"git://github.com/wearefractal/nodecast.git",
+   "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
+   "main":"./index.js",
+   "keywords":["google","chromecast","upnp","tv"],
+   "dependencies":{
+      
+   },
+   "devDependencies":{
+      "mocha":"*",
+      "should":"*"
+   },
+   "scripts":{
+      "test":"mocha"
+   },
+   "engines":{
+      "node":">= 0.4.0"
+   },
+   "licenses":[
+      {
+         "type":"MIT",
+         "url":"http://github.com/wearefractal/nodecast/raw/master/LICENSE"
+      }
+   ]
+}

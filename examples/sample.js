@@ -1,0 +1,2 @@
+var nodecast = require('../');
+
