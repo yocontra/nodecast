@@ -7,8 +7,6 @@ describe('device', function() {
     var ee = nodecast.find();
     ee.on('error', done);
     ee.once('device', function(device){
-      console.log(device.info.modelName);
-      if (device.info.modelName !== 'Eureka Dongle') return;
 			should.exist(device);
 			should.exist(device.address);
 			should.exist(device.name);
