@@ -52,6 +52,14 @@ devices.once('device', function(device) {
 	yt.send('hey youtube');
 });
 ```
+## Command Line
+
+This comes with two demo command line tools.
+
+`rollcast` will play rick roll on every device in your network.
+
+`ytcast <video url>` will play a youtube video of your choice on every device in your network.
+
 
 ## ChromeCast
 
