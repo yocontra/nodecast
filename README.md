@@ -32,11 +32,6 @@ var nodecast = require('nodecast');
 var devices = nodecast.find();
 
 devices.once('device', function(device) {
-	device.reboot(function(err) {
-		// triggers a device reboot
-		// chromecast only
-	});
-
 	var yt = device.app('YouTube');
 
 	yt.info(function(err, info){
@@ -44,11 +39,17 @@ devices.once('device', function(device) {
 		// who wrote it, capabilities, etc.
 	});
 
-	yt.start(function(err) {
-		// starts the app on the chromecast
+	yt.start('v=12345', function(err) {
+		// starts the app on the device
 		// also optionally takes data to pass to the app
 		// (for example: youtube takes v=id to launch with a video)
 	});
+	
+	yt.stop(function(err){});
+	
+	// RAMP stuff
+	yt.connect();
+	yt.send('hey youtube');
 });
 ```
 
