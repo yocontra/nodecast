@@ -36,35 +36,22 @@ devices.once('device', function(device) {
 		// triggers a device reboot
 	});
 
-	device.volume(0.5, function(err) {
-		// change volume
+	var yt = device.app('YouTube');
+
+	yt.info(function(err, info){
+		// returns info about the app
+		// who wrote it, capabilities, etc.
 	});
 
-	device.mute(function(err) {
-		// mute the thing
+	yt.start(function(err) {
+		// starts the app on the chromecast
+
+		// connect to the app over websockets
+		app.connect();
+
+		// send the app some data
+		app.write('v=someId');
 	});
-
-	device.video.launch("http://site.com/video.mp4", function(err) {
-		// play a video
-	});
-
-	device.video.on('progress', function(status) {
-		// monitor play progress for a video
-	});
-
-	// these control videos currently playing
-	device.video.play(function (err){});
-	device.video.setPosition(function (err){});
-	device.video.pause(function (err){});
-
-	// you can use your own custom apps too
-	device.write("com.you.android.yourapp", {"test": "your custom data here"});
-
-	// and you can listen for events from your apps
-	device.on("command:com.you.android.yourapp", function(msg) {
-
-	});
-
 });
 ```
 

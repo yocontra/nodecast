@@ -11,7 +11,7 @@
       "node-ssdp":"*",
       "request":"*",
       "ws":"*",
-      "xmlson":"*"
+      "xml2json":"*"
    },
    "devDependencies":{
       "mocha":"*",

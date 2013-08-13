@@ -6,11 +6,11 @@ describe('device', function() {
   it('should have all the fields', function(done) {
     var ee = nodecast.find();
     ee.on('error', done);
-    ee.on('device', function(device){
+    ee.once('device', function(device){
 			should.exist(device);
 			should.exist(device.address);
 			should.exist(device.name);
-			should.exist(device.socket);
+      should.exist(device.app);
 			done();
     });
   });
