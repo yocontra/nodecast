@@ -8,7 +8,7 @@
 </tr>
 <tr>
 <td>Description</td>
-<td>Node interface to DIAL/ChromeCast</td>
+<td>Node interface to DIAL/RAMP/ChromeCast</td>
 </tr>
 <tr>
 <td>Node Version</td>
@@ -34,6 +34,7 @@ var devices = nodecast.find();
 devices.once('device', function(device) {
 	device.reboot(function(err) {
 		// triggers a device reboot
+		// chromecast only
 	});
 
 	var yt = device.app('YouTube');
