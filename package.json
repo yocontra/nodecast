@@ -1,12 +1,12 @@
 {
    "name":"nodecast",
-   "description":"Node interface to chromecast",
+   "description":"Node interface to DIAL/ChromeCast",
    "version":"0.0.1",
    "homepage":"http://github.com/wearefractal/nodecast",
    "repository":"git://github.com/wearefractal/nodecast.git",
    "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
    "main":"./index.js",
-   "keywords":["google","chromecast","upnp","tv"],
+   "keywords":["google","chromecast","upnp","tv","dial","relaxation","discovery"],
    "dependencies":{
       "node-ssdp":"*",
       "request":"*",

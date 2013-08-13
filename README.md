@@ -8,7 +8,7 @@
 </tr>
 <tr>
 <td>Description</td>
-<td>Node interface to nodecast</td>
+<td>Node interface to DIAL/ChromeCast</td>
 </tr>
 <tr>
 <td>Node Version</td>
@@ -20,11 +20,11 @@ This library has been tested with a ChromeCast emulator until mine arrives. Theo
 
 ## How this works
 
-![Chromecast SSDP](http://geeknizer.com/wp-content/uploads/2013/07/dial-discovery.jpg)
+![DIAL](http://geeknizer.com/wp-content/uploads/2013/07/dial-discovery.jpg)
 
-ChromeCast uses DIAL, RAMP, and some REST protocols. This library aims to mash all of those together into one interface.
+This uses the DIAL discovery protocol over SSDP to discover devices. Once you get a device, you can access applications on it using the DIAL relaxation protocol.
 
-## Usage
+## Client Usage
 
 ```javascript
 var nodecast = require('nodecast');
@@ -51,9 +51,18 @@ devices.once('device', function(device) {
 
 		// send the app some data
 		app.write('v=someId');
+
+		// listen for messages from the app
+		app.on('message', function(data) {
+
+		});
 	});
 });
 ```
+
+## Server Usage
+
+DIAL server implementation coming soon
 
 ## Examples
 

@@ -11,6 +11,7 @@ describe('device', function() {
 			should.exist(device.address);
 			should.exist(device.name);
       should.exist(device.app);
+      should.exist(device.info);
 			done();
     });
   });
