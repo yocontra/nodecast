@@ -45,7 +45,9 @@ devices.once('device', function(device) {
 
 	yt.start(function(err) {
 		// starts the app on the chromecast
-
+		// also optionally takes data to pass to the app
+		// (for example: youtube takes v=id to launch with a video)
+		
 		// connect to the app over websockets
 		app.connect();
 

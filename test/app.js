@@ -55,6 +55,21 @@ describe('app', function() {
     });
   });
 
+  it('should .start() then connect', function(done) {
+    var ee = nodecast.find();
+    ee.on('error', done);
+    ee.once('device', function(device){
+      var yt = device.app('YouTube');
+      yt.start(function(err) {
+        should.not.exist(err);
+        yt.connect(function(err) {
+          should.not.exist(err);
+          done();
+        });
+      });
+    });
+  });
+
   it('should .start() then get a ping', function(done) {
     var ee = nodecast.find();
     ee.on('error', done);
