@@ -16,7 +16,8 @@
       "request":"*",
       "ws":"*",
       "xml2json":"*",
-      "optimist":"*"
+      "optimist":"*",
+      "require-dir":"*"
    },
    "devDependencies":{
       "mocha":"*",
