@@ -16,7 +16,7 @@
 </tr>
 </table>
 
-This library has been tested with a ChromeCast emulator until mine arrives. Theoretically it should work with your physical one just fine.
+This library has been tested with ChromeCast, Roku, and a Panasonic Viera TV. It fully supports any device that uses the DIAL protocol. RAMP support is being worked on for certain ChromeCast functionality.
 
 ## How this works
 
@@ -47,24 +47,13 @@ devices.once('device', function(device) {
 		// starts the app on the chromecast
 		// also optionally takes data to pass to the app
 		// (for example: youtube takes v=id to launch with a video)
-		
-		// connect to the app over websockets
-		app.connect();
-
-		// send the app some data
-		app.write('v=someId');
-
-		// listen for messages from the app
-		app.on('message', function(data) {
-
-		});
 	});
 });
 ```
 
-## Server Usage
+## ChromeCast
 
-DIAL server implementation coming soon
+RAMP support is still being worked on. RAMP is DIAL + a WebSocket to do streaming video progress and more.
 
 ## Examples
 
