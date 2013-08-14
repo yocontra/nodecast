@@ -6,7 +6,7 @@
    "repository":"git://github.com/wearefractal/nodecast.git",
    "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
    "main":"./index.js",
-   "keywords":["google","chromecast","upnp","tv","dial","relaxation","discovery","ramp","youtube"],
+   "keywords":["google","chromecast","upnp","tv","dial","relaxation","discovery","ramp","youtube","roku","viera","smarttv"],
    "bin":{
       "rollcast": "examples/rickroll-spam.js",
       "ytcast": "examples/spam.js"

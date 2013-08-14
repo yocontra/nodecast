@@ -16,7 +16,7 @@
 </tr>
 </table>
 
-This library has been tested with ChromeCast, Roku, and a Panasonic Viera TV. It fully supports any device that uses the DIAL protocol. RAMP support is being worked on for certain ChromeCast functionality.
+This library has been tested with ChromeCast, Roku, and a Panasonic Viera TV. It fully supports any device that uses the DIAL protocol. Support for custom device functionality is supported in some cases (See Custom Devices section below).
 
 ## How this works
 
@@ -24,7 +24,7 @@ This library has been tested with ChromeCast, Roku, and a Panasonic Viera TV. It
 
 This uses the DIAL discovery protocol over SSDP to discover devices. Once you get a device, you can access applications on it using the DIAL relaxation protocol.
 
-## Client Usage
+## Example
 
 ```javascript
 var nodecast = require('nodecast');
@@ -52,6 +52,53 @@ devices.once('device', function(device) {
 	yt.send('hey youtube');
 });
 ```
+
+## Documentation
+
+### .find([filter])
+
+Returns an EventEmitter that emits all devices on the network. Optional filter to match only certain devices.
+
+Example:
+
+```javascript
+var network = nodecast.find('chromecast');
+
+network.on('device', function(device){
+	
+});
+```
+
+### Device
+
+#### .is(type)
+
+Returns true or false if the device inherits the custom class of (type).
+
+Example:
+
+```javascript
+var network = nodecast.find();
+
+network.on('device', function(device){
+	console.log(device.is('roku')); // true
+});
+```
+
+#### .app(name)
+
+Returns a reference to an application
+
+Example:
+
+```javascript
+var network = nodecast.find();
+
+network.on('device', function(device){
+	var yt = device.app('YouTube');
+});
+```
+
 ## Command Line
 
 This comes with two demo command line tools.
@@ -60,14 +107,9 @@ This comes with two demo command line tools.
 
 `ytcast <video url>` will play a youtube video of your choice on every device in your network.
 
-
 ## Custom Devices
 
-If you look in `./lib/devices` you can see we have custom support for certain devices. Every vendor has their own spin on DIAL so we try to support the cool stuff they add on top of it. ChromeCast for example, has it's own RAMP protocol. Roku has an interface that lets you emulate a remote. Viera has some limitations.
-
-## ChromeCast
-
-RAMP support is still being worked on. RAMP is DIAL + a WebSocket to do streaming video progress and more. Currently Netflix isn't working either due to their proprietary protocol.
+If you look in `./lib/devices` you can see we have custom support for certain devices. Every vendor has their own spin on DIAL so we try to support the cool stuff they add on top of it. ChromeCast for example, has it's own RAMP protocol. Roku has an interface that lets you emulate a remote. This custom functionality is mixed into the generic DIAL device if support is detected.
 
 ## Examples
 

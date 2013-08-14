@@ -4,9 +4,6 @@ var nodecast = require('../');
 var stream = nodecast.find();
 
 stream.on('device', function(device) {
-	// This is how you would do a device filter
-	//if (device.info.modelName !== "Eureka Dongle") return;
-
 	console.log('Found device', device.name);
 
 	var youtube = device.app('YouTube');

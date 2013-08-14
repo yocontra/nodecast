@@ -5,7 +5,7 @@ require('mocha');
 describe('app', function() {
   it('should return app object', function(done) {
     var ee = nodecast.find();
-    ee.on('error', done);
+    ee.once('error', done);
     ee.once('device', function(device){
 			var yt = device.app('YouTube');
       should.exist(yt);
