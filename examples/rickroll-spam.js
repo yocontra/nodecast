@@ -6,13 +6,11 @@ var stream = nodecast.find();
 stream.on('device', function(device) {
 	// This is how you would do a device filter
 	//if (device.info.modelName !== "Eureka Dongle") return;
-	if (device.info.modelName !== "Eureka Dongle") return;
-	
+
 	console.log('Found device', device.name);
 
 	var youtube = device.app('YouTube');
 
-	console.log(device.address);
 	youtube.start('v=oHg5SJYRHA0', function(err) {
 		if (err) console.log('error starting', err);
 		console.log('Started on', device.name);
