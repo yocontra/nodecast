@@ -8,11 +8,12 @@ describe('device', function() {
     ee.once('error', done);
     ee.once('device', function(device){
 			should.exist(device);
-			should.exist(device.address);
-			should.exist(device.name);
-      should.exist(device.app);
-      should.exist(device.info);
-      should.exist(device.types);
+			should.exist(device.address, 'address');
+			should.exist(device.name, 'name');
+      should.exist(device.info, 'info');
+      should.exist(device.types, 'types');
+      should.exist(device.appsBase, 'appsBase');
+      should.exist(device.httpBase, 'httpBase');
 			done();
     });
   });
@@ -23,11 +24,12 @@ describe('device', function() {
     ee.once('error', done);
     ee.once('device', function(device){
       should.exist(device);
-      should.exist(device.address);
-      should.exist(device.name);
-      should.exist(device.app);
-      should.exist(device.info);
-      should.exist(device.types);
+      should.exist(device.address, 'address');
+      should.exist(device.name, 'name');
+      should.exist(device.info, 'info');
+      should.exist(device.types, 'types');
+      should.exist(device.appsBase, 'appsBase');
+      should.exist(device.httpBase, 'httpBase');
       device.types.should.eql(['generic', 'chromecast']);
       device.is('chromecast').should.equal(true);
       done();

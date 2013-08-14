@@ -55,7 +55,8 @@ devices.once('device', function(device) {
 
 ## Documentation
 
-### .find([filter])
+
+### Finder(filter)
 
 Returns an EventEmitter that emits all devices on the network. Optional filter to match only certain devices.
 
@@ -68,6 +69,10 @@ network.on('device', function(device){
 	
 });
 ```
+
+#### .end()
+
+Cancels SSDP search for devices.
 
 ### Device
 
