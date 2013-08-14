@@ -13,7 +13,7 @@
    },
    "dependencies":{
       "node-ssdp":"*",
-      "request":"*",
+      "superagent":"*",
       "ws":"*",
       "xml2json":"*",
       "optimist":"*",
