@@ -61,9 +61,13 @@ This comes with two demo command line tools.
 `ytcast <video url>` will play a youtube video of your choice on every device in your network.
 
 
+## Custom Devices
+
+If you look in `./lib/devices` you can see we have custom support for certain devices. Every vendor has their own spin on DIAL so we try to support the cool stuff they add on top of it. ChromeCast for example, has it's own RAMP protocol. Roku has an interface that lets you emulate a remote. Viera has some limitations.
+
 ## ChromeCast
 
-RAMP support is still being worked on. RAMP is DIAL + a WebSocket to do streaming video progress and more.
+RAMP support is still being worked on. RAMP is DIAL + a WebSocket to do streaming video progress and more. Currently Netflix isn't working either due to their proprietary protocol.
 
 ## Examples
 
