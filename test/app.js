@@ -29,6 +29,7 @@ describe('app', function() {
   });
 
   it('should .start() then .stop()', function(done) {
+    this.timeout(10000);
     var ee = nodecast.find();
     ee.on('error', done);
     ee.once('device', function(device){
@@ -55,6 +56,7 @@ describe('app', function() {
     });
   });
 
+  /*
   it('should .start() then connect', function(done) {
     var ee = nodecast.find();
     ee.on('error', done);
@@ -86,5 +88,6 @@ describe('app', function() {
       });
     });
   });
+  */
 
 });
