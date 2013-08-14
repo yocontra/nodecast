@@ -75,7 +75,7 @@ You can view more examples in the [example folder.](https://github.com/wearefrac
 
 ## Testing
 
-To run the tests you either need a chromecast somewhere on your WiFi or you need to run the emulator.
+To run the tests you either need to run the ChromeCast emulator locally. Mute your speakers because it will pop up videos and close them.
 
 ## LICENSE
 
