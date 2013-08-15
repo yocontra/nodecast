@@ -36,10 +36,7 @@ devices.once('device', function(device) {
 });
 ```
 
-## Documentation
-
-
-### Finder(filter)
+## Finder(filter)
 
 Returns an EventEmitter that emits all devices on the network. Optional filter to match only certain devices.
 
@@ -53,13 +50,13 @@ network.on('device', function(device){
 });
 ```
 
-#### .end()
+### .end()
 
 Cancels SSDP search for devices.
 
-### Device
+## Device
 
-#### .is(type)
+### .is(type)
 
 Returns true or false if the device inherits the custom class of (type).
 
@@ -73,7 +70,7 @@ network.on('device', function(device){
 });
 ```
 
-#### .app(name)
+### .app(name)
 
 Returns a reference to an application
 
@@ -89,7 +86,7 @@ network.on('device', function(device){
 
 ## Application
 
-#### .info(cb)
+### .info(cb)
 
 Callback is optional. Result data is the parsed XML of whatever the device vendor and application vendor chose to put on their page.
 
@@ -107,7 +104,7 @@ network.on('device', function(device){
 });
 ```
 
-#### .start(data, cb)
+### .start(data, cb)
 
 Data and callback are both optional. The format of data may depend on the device or the app you are interfacing with.
 
@@ -136,7 +133,7 @@ network.on('device', function(device){
 });
 ```
 
-#### .stop(cb)
+### .stop(cb)
 
 Callback is optional. Stops the app. Some devices do not support this.
 
