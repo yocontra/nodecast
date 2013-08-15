@@ -16,13 +16,7 @@
 </tr>
 </table>
 
-This library has been tested with ChromeCast, Roku, and a Panasonic Viera TV. It fully supports any device that uses the DIAL protocol. Support for custom device functionality is supported in some cases (See Custom Devices section below).
-
-## How this works
-
-![DIAL](http://geeknizer.com/wp-content/uploads/2013/07/dial-discovery.jpg)
-
-This uses the DIAL discovery protocol over SSDP to discover devices. Once you get a device, you can access applications on it using the DIAL relaxation protocol.
+This library fully supports any device that uses the DIAL discovery protocol. Support for custom device functionality is supported in some cases (See Custom Devices section below). This library has been tested with ChromeCast, Roku, and a Panasonic Viera TV. Any device that lets you send YouTube videos to it will have the DIAL protocol.
 
 ## Example
 
@@ -34,22 +28,11 @@ var devices = nodecast.find();
 devices.once('device', function(device) {
 	var yt = device.app('YouTube');
 
-	yt.info(function(err, info){
-		// returns info about the app
-		// who wrote it, capabilities, etc.
-	});
-
 	yt.start('v=12345', function(err) {
 		// starts the app on the device
 		// also optionally takes data to pass to the app
 		// (for example: youtube takes v=id to launch with a video)
 	});
-	
-	yt.stop(function(err){});
-	
-	// RAMP stuff
-	yt.connect();
-	yt.send('hey youtube');
 });
 ```
 
@@ -104,13 +87,75 @@ network.on('device', function(device){
 });
 ```
 
-## Command Line
+## Application
 
-This comes with two demo command line tools.
+#### .info(cb)
 
-`rollcast` will play rick roll on every device in your network.
+Callback is optional. Result data is the parsed XML of whatever the device vendor and application vendor chose to put on their page.
 
-`ytcast <video url>` will play a youtube video of your choice on every device in your network.
+Example:
+
+```javascript
+var network = nodecast.find();
+
+network.on('device', function(device){
+	var yt = device.app('YouTube');
+
+	yt.info(function(err, info){
+
+	});
+});
+```
+
+#### .start(data, cb)
+
+Data and callback are both optional. The format of data may depend on the device or the app you are interfacing with.
+
+Example:
+
+```javascript
+var network = nodecast.find();
+
+network.on('device', function(device){
+	var yt = device.app('YouTube');
+
+	// all below are valid
+	yt.start('v=12345', function(err){
+
+	});
+
+	yt.start({v:"12345"}, function(err){
+
+	});
+
+	yt.start(function(err){
+
+	});
+
+	yt.start();
+});
+```
+
+#### .stop(cb)
+
+Callback is optional. Stops the app. Some devices do not support this.
+
+Example:
+
+```javascript
+var network = nodecast.find();
+
+network.on('device', function(device){
+	var yt = device.app('YouTube');
+
+	// all below are valid
+	yt.stop(function(err){
+
+	});
+
+	yt.stop();
+});
+```
 
 ## Custom Devices
 

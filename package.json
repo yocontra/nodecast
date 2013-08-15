@@ -1,16 +1,13 @@
 {
    "name":"nodecast",
    "description":"Node interface to DIAL/RAMP/ChromeCast",
-   "version":"0.0.6",
+   "version":"0.0.7",
    "homepage":"http://github.com/wearefractal/nodecast",
    "repository":"git://github.com/wearefractal/nodecast.git",
    "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
    "main":"./index.js",
    "keywords":["google","chromecast","upnp","tv","dial","relaxation","discovery","ramp","youtube","roku","viera","smarttv"],
-   "bin":{
-      "rollcast": "examples/rickroll-spam.js",
-      "ytcast": "examples/spam.js"
-   },
+
    "dependencies":{
       "node-ssdp":"*",
       "superagent":"*",
