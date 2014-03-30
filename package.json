@@ -1,36 +1,50 @@
 {
-   "name":"nodecast",
-   "description":"Node interface to DIAL/RAMP/ChromeCast",
-   "version":"0.0.8",
-   "homepage":"http://github.com/wearefractal/nodecast",
-   "repository":"git://github.com/wearefractal/nodecast.git",
-   "author":"Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
-   "main":"./index.js",
-   "keywords":["google","chromecast","upnp","tv","dial","relaxation","discovery","ramp","youtube","roku","viera","smarttv"],
-
-   "dependencies":{
-      "node-ssdp":"*",
-      "superagent":"*",
-      "ws":"*",
-      "xml2json":"*",
-      "optimist":"*",
-      "require-dir":"*",
-      "async":"*"
-   },
-   "devDependencies":{
-      "mocha":"*",
-      "should":"*"
-   },
-   "scripts":{
-      "test":"mocha"
-   },
-   "engines":{
-      "node":">= 0.4.0"
-   },
-   "licenses":[
-      {
-         "type":"MIT",
-         "url":"http://github.com/wearefractal/nodecast/raw/master/LICENSE"
-      }
-   ]
+  "name": "nodecast",
+  "description": "Node interface to DIAL/RAMP/ChromeCast",
+  "version": "0.0.9",
+  "homepage": "http://github.com/wearefractal/nodecast",
+  "repository": "git://github.com/wearefractal/nodecast.git",
+  "author": "Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
+  "main": "./index.js",
+  "keywords": [
+    "google",
+    "chromecast",
+    "upnp",
+    "tv",
+    "dial",
+    "relaxation",
+    "discovery",
+    "ramp",
+    "youtube",
+    "roku",
+    "viera",
+    "smarttv"
+  ],
+  "dependencies": {
+    "node-ssdp": "^0.2.1",
+    "superagent": "^0.17.0",
+    "ws": "^0.4.31",
+    "xml2json": "^0.4.0",
+    "optimist": "^0.6.1",
+    "require-dir": "^0.1.0",
+    "async": "^0.6.1",
+    "url-join": "0.0.1",
+    "to-array": "^0.1.4"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/wearefractal/nodecast/raw/master/LICENSE"
+    }
+  ]
 }
