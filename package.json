@@ -1,7 +1,7 @@
 {
   "name": "nodecast",
   "description": "Node interface to DIAL/RAMP/ChromeCast",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "homepage": "http://github.com/wearefractal/nodecast",
   "repository": "git://github.com/wearefractal/nodecast.git",
   "author": "Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
