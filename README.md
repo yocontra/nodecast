@@ -1,4 +1,4 @@
-[![NPM version](https://badge.fury.io/js/nodecast.png)](http://badge.fury.io/js/nodecast)
+[![NPM version](https://badge.fury.io/js/nodecast.svg)](http://badge.fury.io/js/nodecast)
 
 ## Information
 
