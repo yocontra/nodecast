@@ -1,9 +1,9 @@
 {
   "name": "nodecast",
   "description": "Node interface to DIAL/RAMP/ChromeCast",
-  "version": "0.0.10",
-  "homepage": "http://github.com/wearefractal/nodecast",
-  "repository": "git://github.com/wearefractal/nodecast.git",
+  "version": "0.0.11",
+  "homepage": "http://github.com/contra/nodecast",
+  "repository": "git://github.com/contra/nodecast.git",
   "author": "Fractal <contact@wearefractal.com> (http://wearefractal.com/)",
   "main": "./index.js",
   "keywords": [
@@ -21,15 +21,15 @@
     "smarttv"
   ],
   "dependencies": {
-    "node-ssdp": "^0.2.1",
-    "superagent": "^0.17.0",
-    "ws": "^0.4.31",
-    "xml2json": "^0.4.0",
+    "async": "^2.6.1",
+    "node-ssdp": "^3.3.0",
     "optimist": "^0.6.1",
-    "require-dir": "^0.1.0",
-    "async": "^0.6.1",
-    "url-join": "0.0.1",
-    "to-array": "^0.1.4"
+    "require-dir": "^1.0.0",
+    "superagent": "^3.8.3",
+    "to-array": "^0.1.4",
+    "url-join": "^4.0.0",
+    "ws": "^6.0.0",
+    "xml2json": "^0.11.2"
   },
   "devDependencies": {
     "mocha": "*",
